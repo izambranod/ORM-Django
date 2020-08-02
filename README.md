@@ -13,41 +13,41 @@ C= Cliente(ruc='0959006775001',nombre:'Israel Zambrano',direccion='Milagro')
 C.save()
 Cliente.objects.create(ruc='0957835555001',nombre:'Daniel Vera',direccion='Guayaquil')
 ```
-Insertar al modelo Factura
+Insertar al modelo Factura:
 ```bash
 F= Factura(fecha='2020-07-31',total=16.0,cliente_id=1)
 F.save()
 Factura.objects.create(fecha='2020-07-21',total=36.25,cliente_id=2)
 ```
-Insertar al modelo DetalleFactura
+Insertar al modelo DetalleFactura:
 ```bash
 D= DetalleFactura(cantidad=16,precio=1.5,subtotal=1,factura_id=1,producto_id=1)
 D.save()
 DetalleFactura.objects.create(cantidad=6,precio=2.5,subtotal=15,factura_id=2,producto_id=2)
 ```
 ## Actualizar registros en los modelos
-Actualizar en el modelo Producto
+Actualizar en el modelo Producto:
 ```bash
 p = Producto.objects.get(id=1) 
 p.precio=1.3
 p.save()
 Producto.objects.filter(id=1).update(precio=1.7)
 ```
-Actualizar en el modelo Cliente
+Actualizar en el modelo Cliente:
 ```bash
 c = Cliente.objects.get(id=1)
 c.nombre='Moises Zambrano'
 c.save()
 Cliente.objects.filter(id=2).update(nombre='Yina')
 ```
-Actualizar en el modelo Factura
+Actualizar en el modelo Factura:
 ```bash
 f= Factura.objects.get(id=1)
 f.total=15.0
 f.save()
 Factura.objects.filter(id=2).update(total=25.25,fecha='2020-07-25')
 ```
-Actualizar en el modelo DetalleFactura
+Actualizar en el modelo DetalleFactura:
 ```bash
 d= DetalleFactura.objects.get(id=1)
 d.cantidad=12
